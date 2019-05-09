@@ -12,8 +12,13 @@ public class clsServiceLocator
 		
 	}
 	
-	public void setService(String IP, String Puerto, String NombreServicio)
+	public void setService()
 	{
+		String IP = "127.0.0.1";
+		String Puerto = "1099";
+		String NombreServicio = "EasyBooking";
+		
+		
 		if (System.getSecurityManager() == null) 
 		{
 			System.setSecurityManager(new SecurityManager());

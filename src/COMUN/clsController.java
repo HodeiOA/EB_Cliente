@@ -15,13 +15,13 @@ public class clsController
 	
 	public static void main(String[] args) throws RemoteException
 	{
-		new clsController(args);
+		new clsController();
 	}
 	
-	public clsController(String[] args) throws RemoteException
+	public clsController() throws RemoteException
 	{
 		sl = new clsServiceLocator();
-		sl.setService(args[0], args[1], args[2]);
+		sl.setService();
 		
 		//new GUI();
 	}
