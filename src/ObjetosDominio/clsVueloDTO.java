@@ -1,6 +1,7 @@
 package ObjetosDominio;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class clsVueloDTO implements Serializable
@@ -8,14 +9,24 @@ public class clsVueloDTO implements Serializable
 	private static final long serialVersionUID = 1L;
 	
 	private Date fecha;
-	private int numAsientosLibres;
+	private ArrayList<Integer> Asientos;
 	private double precio;
+	private ArrayList<Integer> AsientosOcupados;
 	
-	public clsVueloDTO(Date fecha, int numAsientosLibres, double precio) 
+	public clsVueloDTO(Date fecha, int numAsientosLibres,ArrayList<Integer> AsientosLibres, double precio,  ArrayList<Integer> AsientosOcupados) 
 	{
 		this.fecha = fecha;
-		this.numAsientosLibres = numAsientosLibres;
+		this.Asientos = AsientosLibres;
 		this.precio = precio;
+		this.AsientosOcupados = AsientosOcupados;
+	}
+
+	public ArrayList<Integer> getAsientosOcupados() {
+		return AsientosOcupados;
+	}
+
+	public void setAsientosOcupados(ArrayList<Integer> asientosOcupados) {
+		AsientosOcupados = asientosOcupados;
 	}
 
 	public Date getFecha() {
@@ -26,12 +37,12 @@ public class clsVueloDTO implements Serializable
 		this.fecha = fecha;
 	}
 
-	public int getNumAsientosLibres() {
-		return numAsientosLibres;
+	public ArrayList<Integer> getAsientos() {
+		return Asientos;
 	}
 
-	public void setNumAsientosLibres(int numAsientosLibres) {
-		this.numAsientosLibres = numAsientosLibres;
+	public void setAsientos(ArrayList<Integer> asientos) {
+		Asientos = asientos;
 	}
 
 	public double getPrecio() {
