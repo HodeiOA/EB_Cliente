@@ -13,12 +13,6 @@ public class clsController
 {
 	private clsServiceLocator sl = null;
 	
-	
-	public static void main(String[] args) throws RemoteException
-	{
-		new clsController();
-	}
-	
 	public clsController() throws RemoteException
 	{
 		sl = new clsServiceLocator();
