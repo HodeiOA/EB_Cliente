@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 
-import COMUN.clsController;
+import Controller.clsController;
 import ObjetosDominio.clsUsuarioDTO;
 import ObjetosDominio.clsVueloDTO;
 

@@ -15,7 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import COMUN.clsController;
+import Controller.clsController;
 import ObjetosDominio.clsUsuarioDTO;
 import ObjetosDominio.clsVueloDTO;
 

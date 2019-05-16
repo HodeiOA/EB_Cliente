@@ -1,4 +1,4 @@
-package COMUN;
+package Controller;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -7,6 +7,7 @@ import java.util.Date;
 import ObjetosDominio.clsAeropuertoDTO;
 import ObjetosDominio.clsUsuarioDTO;
 import ObjetosDominio.clsVueloDTO;
+import Remote.clsServiceLocator;
 
 public class clsController
 {
