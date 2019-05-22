@@ -9,9 +9,9 @@ public class clsUsuarioDTO implements Serializable
 
 	private String email;
 	private String numTarjetaCredito;
-	private clsAeropuerto aeroPreder;
+	private clsAeropuertoDTO aeroPreder;
 	
-	public clsUsuarioDTO(String email, String numTarjetaCredito, clsAeropuerto aeroPreder) 
+	public clsUsuarioDTO(String email, String numTarjetaCredito, clsAeropuertoDTO aeroPreder) 
 	{
 		this.email = email;
 		this.numTarjetaCredito = numTarjetaCredito;
@@ -39,11 +39,11 @@ public class clsUsuarioDTO implements Serializable
 		this.numTarjetaCredito = numTarjetaCredito;
 	}
 
-	public clsAeropuerto getAeroPreder() {
+	public clsAeropuertoDTO getAeroPreder() {
 		return aeroPreder;
 	}
 
-	public void setAeroPreder(clsAeropuerto aeroPreder) {
+	public void setAeroPreder(clsAeropuertoDTO aeroPreder) {
 		this.aeroPreder = aeroPreder;
 	}
 

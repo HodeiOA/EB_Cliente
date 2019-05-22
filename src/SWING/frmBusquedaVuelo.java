@@ -6,6 +6,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -194,15 +195,30 @@ public class frmBusquedaVuelo extends JFrame implements ActionListener
 			//terminar_.-------------------------
 					if(textFieldIda.getText().equals("")&&textFieldVuelta.getText().equals(""))
 					{
-						contr.BuscarVueloCualquierMomento(usuario.getAeroPreder(), textFieldOrigen.getText(), textFieldDestino.getText());
+						try {
+							contr.BuscarVueloCualquierMomento(usuario.getAeroPreder(), textFieldOrigen.getText(), textFieldDestino.getText());
+						} catch (RemoteException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
 					}
 					else if(!textFieldIda.getText().equals("")&&textFieldVuelta.getText().equals(""))
 					{
-						contr.BuscarVueloIda(usuario.getAeroPreder(),textFieldIda.getText(), textFieldOrigen.getText(), textFieldDestino.getText());
+						try {
+							contr.BuscarVueloIda(usuario.getAeroPreder(),textFieldIda.getText(), textFieldOrigen.getText(), textFieldDestino.getText());
+						} catch (RemoteException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
 					}
 					else if(!textFieldIda.getText().equals("")&&!textFieldVuelta.getText().equals(""))
 					{
-						contr.BuscarVueloIdayVuelta(usuario.getAeroPreder(),textFieldIda.getText(), textFieldVuelta.getText(),textFieldOrigen.getText(), textFieldDestino.getText());
+						try {
+							contr.BuscarVueloIdayVuelta(usuario.getAeroPreder(),textFieldIda.getText(), textFieldVuelta.getText(),textFieldOrigen.getText(), textFieldDestino.getText());
+						} catch (RemoteException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
 					}
 					else
 					{

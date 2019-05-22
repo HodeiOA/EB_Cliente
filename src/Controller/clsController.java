@@ -3,12 +3,14 @@ package Controller;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-import ObjetosDominio.clsAeropuerto;
 import ObjetosDominio.clsAeropuertoDTO;
 import ObjetosDominio.clsUsuarioDTO;
 import ObjetosDominio.clsVueloDTO;
 import Remote.clsServiceLocator;
+import Remote.itfFacade;
+import SWING.frmInicio;
 
 public class clsController
 {
@@ -19,21 +21,17 @@ public class clsController
 		sl = new clsServiceLocator();
 		sl.setService();
 		
-		//new GUI();
+		new frmInicio(this);
 	}
 	
-	public boolean RegistrarUsuario(clsUsuarioDTO usuario)
+	public boolean RegistrarUsuario(clsUsuarioDTO nuevoUsuario, boolean modo)  throws RemoteException
 	{
-		//return sl.getService().RegistrarUsuario(usuario);
-		
-		return false;
+		return sl.getService().RegistrarUsuario(nuevoUsuario, modo);
 	}
 	
-	public clsUsuarioDTO LoginUsuario (clsUsuarioDTO nuevoUsuario)
+	public clsUsuarioDTO LoginUsuario(clsUsuarioDTO nuevoUsuario, boolean modo)  throws RemoteException
 	{
-		//return sl.getService().LoginUsuario(usuario);
-		
-		return null;
+		return sl.getService().LoginUsuario(nuevoUsuario, modo);
 	}
 	
 	public ArrayList<clsAeropuertoDTO> getListaAeropuertos()
@@ -43,31 +41,23 @@ public class clsController
 		return null;
 	}
 	
-	public ArrayList<clsVueloDTO> BuscarVueloIda (clsAeropuerto aeropuesrtoPred, String fecha, String ciudadOrigen, String ciudadDestino)
+	public List<clsVueloDTO> BuscarVueloIda (clsAeropuertoDTO aeropuertoPred, String fecha, String ciudadOrigen, String ciudadDestino)  throws RemoteException
 	{
-		//return sl.getService().BuscarVueloIda(aeropuertoPred, fecha, ciudadOrigen, ciudadDestino);
-		
-		return null;
+		return sl.getService().BuscarVueloIda(aeropuertoPred, fecha, ciudadOrigen, ciudadDestino);
 	}
-	public ArrayList<clsVueloDTO> BuscarVueloIdayVuelta (clsAeropuerto aeropuesrtoPred, String fechaIda, String fechaVuelta, String ciudadOrigen, String ciudadDestino)
+	public List<clsVueloDTO>BuscarVueloIdayVuelta (clsAeropuertoDTO aeropuertoPred, String fechaIda, String fechaVuelta, String ciudadOrigen, String ciudadDestino)  throws RemoteException
 	{
-		//return sl.getService().BuscarVueloIdayVuelta(aeropuertoPred, fechaIda, fechaVuelta, ciudadOrigen, ciudadDestino);
-		
-		return null;
+		return sl.getService().BuscarVueloIdayVuelta(aeropuertoPred, fechaIda, fechaVuelta, ciudadOrigen, ciudadDestino);
 	}
 	
-	public ArrayList<clsVueloDTO> BuscarVueloCualquierMomento (clsAeropuerto aeropuesrtoPred, String ciudadOrigen, String ciudadDestino)
+	public List<clsVueloDTO>BuscarVueloCualquierMomento (clsAeropuertoDTO aeropuertoPred, String ciudadOrigen, String ciudadDestino)  throws RemoteException
 	{
-		//return sl.getService().BuscarVueloCualquierMomento(aeropuertoPred, ciudadOrigen, ciudadDestino);
-		
-		return null;
+		return sl.getService().BuscarVueloCualquierMomento(aeropuertoPred, ciudadOrigen, ciudadDestino);
 	}
 	
-	public boolean RealizarPagoyReserva (clsUsuarioDTO usuario, clsVueloDTO vuelo, int numAsiento, String nomViajero)
+	public boolean RealizarPagoyReserva (clsUsuarioDTO usuario, clsVueloDTO vuelo, int numAsiento, String nomViajero, boolean pasarela)  throws RemoteException
 	{
-		//return sl.getService().RealizarPagoyReserva();
-		
-		return false;
+		return sl.getService().RealizarPagoyReserva(usuario, vuelo, numAsiento, nomViajero, pasarela);
 	}
 
 
