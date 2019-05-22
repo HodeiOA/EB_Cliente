@@ -44,7 +44,7 @@ public class frmReserva extends JFrame implements ActionListener
 	 se tendrá que hacer comparando las reservas y los del vuelo
 	 */
 	
-	public frmReserva(String nombreVuelo, clsVueloDTO vuelo, clsController controller, clsUsuarioDTO usuario)
+	public frmReserva(clsVueloDTO vuelo, clsController controller, clsUsuarioDTO usuario)
 	{
 		mipantalla=Toolkit.getDefaultToolkit();
 		screenSize=mipantalla.getScreenSize();

@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Date;
 
+import ObjetosDominio.clsAeropuerto;
 import ObjetosDominio.clsAeropuertoDTO;
 import ObjetosDominio.clsUsuarioDTO;
 import ObjetosDominio.clsVueloDTO;
@@ -42,20 +43,20 @@ public class clsController
 		return null;
 	}
 	
-	public ArrayList<clsVueloDTO> BuscarVueloIda (clsAeropuertoDTO aeropuesrtoPred, Date fecha, String ciudadOrigen, String ciudadDestino)
+	public ArrayList<clsVueloDTO> BuscarVueloIda (clsAeropuerto aeropuesrtoPred, String fecha, String ciudadOrigen, String ciudadDestino)
 	{
 		//return sl.getService().BuscarVueloIda(aeropuertoPred, fecha, ciudadOrigen, ciudadDestino);
 		
 		return null;
 	}
-	public ArrayList<clsVueloDTO> BuscarVueloIdayVuelta (clsAeropuertoDTO aeropuesrtoPred, Date fechaIda, Date fechaVuelta, String ciudadOrigen, String ciudadDestino)
+	public ArrayList<clsVueloDTO> BuscarVueloIdayVuelta (clsAeropuerto aeropuesrtoPred, String fechaIda, String fechaVuelta, String ciudadOrigen, String ciudadDestino)
 	{
 		//return sl.getService().BuscarVueloIdayVuelta(aeropuertoPred, fechaIda, fechaVuelta, ciudadOrigen, ciudadDestino);
 		
 		return null;
 	}
 	
-	public ArrayList<clsVueloDTO> BuscarVueloCualquierMomento (clsAeropuertoDTO aeropuesrtoPred, String ciudadOrigen, String ciudadDestino)
+	public ArrayList<clsVueloDTO> BuscarVueloCualquierMomento (clsAeropuerto aeropuesrtoPred, String ciudadOrigen, String ciudadDestino)
 	{
 		//return sl.getService().BuscarVueloCualquierMomento(aeropuertoPred, ciudadOrigen, ciudadDestino);
 		

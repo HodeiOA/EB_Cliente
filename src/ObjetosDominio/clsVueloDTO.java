@@ -2,7 +2,6 @@ package ObjetosDominio;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class clsVueloDTO implements Serializable
 {
@@ -13,7 +12,7 @@ public class clsVueloDTO implements Serializable
 	private double precio;
 	private ArrayList<Integer> AsientosOcupados;
 	
-	public clsVueloDTO(String fecha,ArrayList<Integer> Asiento, double precio,  ArrayList<Integer> AsientosOcupados) 
+	public clsVueloDTO(String fecha,ArrayList<Integer> Asientos, double precio,  ArrayList<Integer> AsientosOcupados) 
 	{
 		this.fecha = fecha;
 		this.Asientos = Asientos;
