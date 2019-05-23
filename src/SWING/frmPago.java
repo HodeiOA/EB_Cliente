@@ -25,6 +25,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.rmi.RemoteException;
 import java.awt.event.ActionEvent;
 
 public class frmPago extends JDialog implements ActionListener
@@ -159,7 +160,12 @@ public class frmPago extends JDialog implements ActionListener
 				
 				if(btnPaypal.isSelected()||btnVisa.isSelected())
 				{
-					contr.RealizarPagoyReserva(usuario, vuelo, numAsiento, nomViajero);
+					try {
+						contr.RealizarPagoyReserva(usuario, vuelo, numAsiento, nomViajero, btnVisa.isSelected());
+					} catch (RemoteException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					JOptionPane.showMessageDialog(this,
 							"Tu reserva ha sido realizada con éxito ¡ Buen viaje !",
 						    "Reserva realizada", 1);	
