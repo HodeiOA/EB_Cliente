@@ -170,11 +170,17 @@ public class frmSeleccionVuelo extends JFrame implements ActionListener
 		
 		model = new DefaultListModel();
 		
-		
-		for (clsVueloDTO vuelo : listaVuelos) 
+		if(listaVuelos.size()==0)
 		{
-			//aquí no sé si se muestran los datos de dentro del objeto
-			model.addElement(vuelo.toString());
+			
+		}
+		else
+		{
+			for (clsVueloDTO vuelo : listaVuelos) 
+			{
+				//aquí no sé si se muestran los datos de dentro del objeto
+				model.addElement(vuelo.toString());
+			}
 		}
 		
 		jListVuelos = new JList(model);

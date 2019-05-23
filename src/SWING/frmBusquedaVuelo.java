@@ -29,7 +29,7 @@ public class frmBusquedaVuelo extends JFrame implements ActionListener
 {
 	private static final long serialVersionUID = 295472610848871509L;
 
-	List <String> listaVuelos;
+//	List <String> listaVuelos;
 	
 	//Listeners
 	ActionListener pulsarContinuar;
@@ -193,10 +193,13 @@ public class frmBusquedaVuelo extends JFrame implements ActionListener
 //					listaVuelos.add("Vuelo2");
 //					listaVuelos.add("Vuelo3");
 			//terminar_.-------------------------
+					
+					List<clsVueloDTO> listaVuelos= new ArrayList<clsVueloDTO>();
+					
 					if(textFieldIda.getText().equals("")&&textFieldVuelta.getText().equals(""))
 					{
 						try {
-							contr.BuscarVueloCualquierMomento(usuario.getAeroPreder(), textFieldOrigen.getText(), textFieldDestino.getText());
+							listaVuelos=contr.BuscarVueloCualquierMomento(usuario.getAeroPreder(), textFieldOrigen.getText(), textFieldDestino.getText());
 						} catch (RemoteException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
@@ -205,7 +208,7 @@ public class frmBusquedaVuelo extends JFrame implements ActionListener
 					else if(!textFieldIda.getText().equals("")&&textFieldVuelta.getText().equals(""))
 					{
 						try {
-							contr.BuscarVueloIda(usuario.getAeroPreder(),textFieldIda.getText(), textFieldOrigen.getText(), textFieldDestino.getText());
+							listaVuelos=contr.BuscarVueloIda(usuario.getAeroPreder(),textFieldIda.getText(), textFieldOrigen.getText(), textFieldDestino.getText());
 						} catch (RemoteException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
@@ -214,7 +217,7 @@ public class frmBusquedaVuelo extends JFrame implements ActionListener
 					else if(!textFieldIda.getText().equals("")&&!textFieldVuelta.getText().equals(""))
 					{
 						try {
-							contr.BuscarVueloIdayVuelta(usuario.getAeroPreder(),textFieldIda.getText(), textFieldVuelta.getText(),textFieldOrigen.getText(), textFieldDestino.getText());
+							listaVuelos=contr.BuscarVueloIdayVuelta(usuario.getAeroPreder(),textFieldIda.getText(), textFieldVuelta.getText(),textFieldOrigen.getText(), textFieldDestino.getText());
 						} catch (RemoteException e1) {
 							// TODO Auto-generated catch block
 							e1.printStackTrace();
@@ -228,9 +231,8 @@ public class frmBusquedaVuelo extends JFrame implements ActionListener
 							    JOptionPane.WARNING_MESSAGE);
 					}
 					
-//					ESTO LO HACEMOS EN CONTROLLER:
-//					frmSeleccionVuelo ventanaSelecVuel = new frmSeleccionVuelo(listaVuelos);
-//					ventanaSelecVuel.setVisible(true);
+					frmSeleccionVuelo ventanaSelecVuel = new frmSeleccionVuelo(listaVuelos,usuario, contr);
+					ventanaSelecVuel.setVisible(true);
 					this.setVisible(false);
 
 				}
