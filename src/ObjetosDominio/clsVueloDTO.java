@@ -51,5 +51,14 @@ public class clsVueloDTO implements Serializable
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
+
+	@Override
+	public String toString() 
+	{ 
+		int asientosLibres = Asientos.size()-AsientosOcupados.size();
+		return "VUELO Fecha:" + fecha + ", Asientos libres:" + asientosLibres + ", Precio:" + precio;
+	}
+	
+	
 	
 }
