@@ -5,6 +5,11 @@ import java.util.ArrayList;
 
 public class clsAeropuertoDTO implements Serializable
 {
+	@Override
+	public String toString()
+	{
+		return codAeropuerto + ", " + ciudad;
+	}
 	private static final long serialVersionUID = 1L;
 	
 	private String codAeropuerto;

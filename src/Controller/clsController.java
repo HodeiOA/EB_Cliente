@@ -37,8 +37,6 @@ public class clsController
 	public ArrayList<clsAeropuertoDTO> getListaAeropuertos()
 	{
 		//return sl.getService().getListaAeropuertos();
-		
-		return null;
 	}
 	
 	public List<clsVueloDTO> BuscarVueloIda (clsAeropuertoDTO aeropuertoPred, String fecha, String ciudadOrigen, String ciudadDestino)  throws RemoteException

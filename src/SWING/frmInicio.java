@@ -66,9 +66,9 @@ public class frmInicio extends JFrame
 	private int y = 100;
 	private boolean modo;
 	
-	private ImageIcon imgGoogle = new ImageIcon("./images/Google.png");
-	private ImageIcon imgFacebook = new ImageIcon("./images/Facebook.png");
-	private ImageIcon imgValidado = new ImageIcon("./images/Validado.png");
+//	private ImageIcon imgGoogle = new ImageIcon("../images/Google.png");
+//	private ImageIcon imgFacebook = new ImageIcon("../images/Facebook.png");
+//	private ImageIcon imgValidado = new ImageIcon("../images/Validado.png");
 	
 	private boolean autorizacion = false;
 
@@ -122,7 +122,7 @@ public class frmInicio extends JFrame
         panelAutorización= new JPanel();
         
         lbGoogle = new JLabel();
-        lbGoogle.setIcon(imgGoogle);
+//        lbGoogle.setIcon(imgGoogle);
         panelAutorización.add(lbGoogle);
         lbGoogle.addMouseListener(new MouseListener() {
 			
@@ -159,7 +159,7 @@ public class frmInicio extends JFrame
         
         lbFacebook = new JLabel();
         panelAutorización.add(lbFacebook);
-        lbFacebook.setIcon(imgFacebook);
+//        lbFacebook.setIcon(imgFacebook);
         lbFacebook.addMouseListener(new MouseListener() {
 			
 			@Override
@@ -255,20 +255,20 @@ public class frmInicio extends JFrame
 		
 		if( aux && !modo)
 		{
-			lbGoogle.setIcon(imgValidado);
+//			lbGoogle.setIcon(imgValidado);
 		}
 		
 		if( aux && modo)
 		{
-			lbFacebook.setIcon(imgValidado);
+//			lbFacebook.setIcon(imgValidado);
 		}
 		
 		wait(1000);
 		
 		tfEmail.setText("");
 		tfTarjeta.setText("");
-		lbGoogle.setIcon(imgGoogle);
-		lbFacebook.setIcon(imgFacebook);
+//		lbGoogle.setIcon(imgGoogle);
+//		lbFacebook.setIcon(imgFacebook);
 	}
 	
 	/**
@@ -283,14 +283,14 @@ public class frmInicio extends JFrame
 		
 		usuario = controller.LoginUsuario(usuario, modo);
 		
-		if( aux && !modo)
+		if( usuario != null && !modo)
 		{
-			lbGoogle.setIcon(imgValidado);
+//			lbGoogle.setIcon(imgValidado);
 		}
 		
-		if( aux && modo)
+		if( usuario != null && modo)
 		{
-			lbFacebook.setIcon(imgValidado);
+//			lbFacebook.setIcon(imgValidado);
 		}
 		
 		wait(1000);
