@@ -21,7 +21,8 @@ public class clsController
 		sl = new clsServiceLocator();
 		sl.setService();
 		
-		new frmInicio(this);
+		frmInicio GUI = new frmInicio(this);
+		GUI.setVisible(true);
 	}
 	
 	public boolean RegistrarUsuario(clsUsuarioDTO nuevoUsuario, boolean modo)  throws RemoteException

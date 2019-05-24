@@ -255,16 +255,6 @@ public class frmInicio extends JFrame
 	{
 		boolean aux = controller.RegistrarUsuario(usuario, modo);
 		
-		if( aux && !modo)
-		{
-
-		}
-		
-		if( aux && modo)
-		{
-
-		}
-		
 		tfEmail.setText("");
 		tfTarjeta.setText("");
 //		lbGoogle.setIcon(imgGoogle);
@@ -293,7 +283,9 @@ public class frmInicio extends JFrame
 //			lbFacebook.setIcon(imgValidado);
 		}
 		
-		new frmBusquedaVuelo(controller, usuario);
+		frmBusquedaVuelo ventana = new frmBusquedaVuelo(controller, usuario);
+		ventana.setVisible(true);
+		this.setVisible(false);
 	}
 }
 
