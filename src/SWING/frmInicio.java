@@ -154,6 +154,7 @@ public class frmInicio extends JFrame
 			public void mouseClicked(MouseEvent e)
 			{
 				modo = false;
+//				lbGoogle.setIcon(imgValidado);
 			}
 		});
         
@@ -190,6 +191,7 @@ public class frmInicio extends JFrame
 			public void mouseClicked(MouseEvent e)
 			{
 				modo = true;
+//				lbFacebook.setIcon(imgValidado);
 			}
 		});
         
@@ -209,7 +211,7 @@ public class frmInicio extends JFrame
 			{
 				try {
 					IniciarSesion(controller);
-				} catch (InterruptedException | RemoteException e1) {
+				} catch (RemoteException | InterruptedException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
@@ -255,15 +257,13 @@ public class frmInicio extends JFrame
 		
 		if( aux && !modo)
 		{
-//			lbGoogle.setIcon(imgValidado);
+
 		}
 		
 		if( aux && modo)
 		{
-//			lbFacebook.setIcon(imgValidado);
+
 		}
-		
-		wait(1000);
 		
 		tfEmail.setText("");
 		tfTarjeta.setText("");
@@ -292,8 +292,6 @@ public class frmInicio extends JFrame
 		{
 //			lbFacebook.setIcon(imgValidado);
 		}
-		
-		wait(1000);
 		
 		new frmBusquedaVuelo(controller, usuario);
 	}
