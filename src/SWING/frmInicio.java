@@ -111,7 +111,7 @@ public class frmInicio extends JFrame
         cbAeropuerto = new JComboBox();
         panelUsuario.add(cbAeropuerto);
         
-        lAeropuertos = controller.getListaAeropuertos();
+       // lAeropuertos = controller.getListaAeropuertos();
         
         for(clsAeropuertoDTO aer: lAeropuertos)
         {

@@ -19,6 +19,6 @@ public interface itfFacade extends Remote
 	public List<clsVueloDTO>BuscarVueloIdayVuelta (clsAeropuertoDTO aeropuesrtoPred, String fechaIda, String fechaVuelta, String ciudadOrigen, String ciudadDestino)  throws RemoteException;
 	public List<clsVueloDTO>BuscarVueloCualquierMomento (clsAeropuertoDTO aeropuesrtoPred, String ciudadOrigen, String ciudadDestino)  throws RemoteException;
 	public boolean RealizarPagoyReserva (clsUsuarioDTO usuario, clsVueloDTO vuelo, int numAsiento, String nomViajero, boolean pasarela)  throws RemoteException;
-	public void LeerTodosVuelosAPI();
-	public void cerrarConexion();
+	public void LeerTodosVuelosAPI() throws RemoteException;
+	public void cerrarConexion() throws RemoteException;
 }
